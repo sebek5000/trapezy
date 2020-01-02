@@ -1,0 +1,3 @@
+class WrongArgumentException extends Exception{
+
+}
