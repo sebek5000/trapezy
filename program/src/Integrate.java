@@ -14,12 +14,14 @@ class Integrate {
     }
 
     private int n(int i) {
-        if(nPowerOf2) {
-            return (int) pow(2, i);
-        }
-        else{
-            return (int) pow(4, i);
-        }
+
+
+            if (nPowerOf2) {
+                return (int) pow(2, i);
+            } else {
+                return (int) pow(4, i);
+            }
+
     }
 
     private double h(int i) {
@@ -33,18 +35,18 @@ class Integrate {
         return (T(i, k-1) + (T(i,k-1) - T(i-1,k-1))/(pow(h(i-k)/h(i),2)-1));
     }
 
-    private double T(int i){
-        double result =0;
+    private double T(int i) {
+        double result = 0;
         int n = 1;
-        while(a + h(i)*n < b){
-            result += f(a + h(i)*n);
+        while (a + h(i) * n < b) {
+            result += f(a + h(i) * n);
             n++;
         }
-        return h(i)*(f(a)/2 +f(b)/2 + result);
+        return h(i) * (f(a) / 2 + f(b) / 2 + result);
     }
 
-    private double f(double x){
-        return sin(x)/x;
+    private double f(double x) {
+        return sin(x) / x;
     }
 
     double calculate2() {

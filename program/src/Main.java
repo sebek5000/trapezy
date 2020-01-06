@@ -1,8 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static java.lang.Math.sqrt;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -23,10 +21,14 @@ public class Main {
             }
         }
 
-        System.out.println(integrate.calculate2());
-        System.out.println(integrate.calculate4());
-        //System.out.println(sqrt(3)/3 + 5.0/18);
-        System.out.println(0.855072972231874388846275415617283738591949597481249266597);
 
+            long start = System.currentTimeMillis();
+            System.out.println(integrate.calculate2());
+            System.out.println("n2 zajęło ms: ");
+            System.out.println( (System.currentTimeMillis() - start));
+            start = System.currentTimeMillis();
+            System.out.println(integrate.calculate4());
+            System.out.println("n4 zajęło ms: ");
+            System.out.println( (System.currentTimeMillis() - start));
     }
 }
